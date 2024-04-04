@@ -2,37 +2,63 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  color: red;
+  font-size: 7.5vh;
+}
+.green {
+  color: green;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.gameBoard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  width: 400px;
+  height: 450px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  border: 5px solid burlywood;
+  box-shadow: 7px 4px 6px 6px grey;
+  padding: 20px;
+  border-radius: 30px;
+  background-color: antiquewhite;
+}
+.topBox, .footBox {
+  background-color: antiquewhite;
+  border: 5px solid burlywood;
+  margin: 0 auto;
+  width: 200px;
+  box-shadow: 7px 4px 6px 6px grey;
+}
+.topBox {
+  transform: translate(0%, 25%);
+}
+#texT {
+  line-height: 0%;
+}
+#newGame {
+  background-color: darkcyan;
+  border: 3px solid darkgoldenrod;
+}
+.footBox {
+  padding: 15px;
+  margin-bottom: 35px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.gameCircle {
+  border: 5px solid burlywood;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 10px auto;
 }
-
-.App-link {
-  color: #61dafb;
+.player_0 {
+  background-color: white;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.player_1 {
+  background-color: green;
+}
+.player_2 {
+  background-color: red;
 }
