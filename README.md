@@ -2,9 +2,9 @@
 
 ### You can access the deployed version of this project at: https://connect-4-game-for-browser.netlify.app
 
-Author: Umehobi Arinze
-GitHub: https://github.com/tonyrealzy
-Twitter: https://twitter.com/tonyrealzy
+#### Author: Umehobi Arinze
+#### GitHub: https://github.com/tonyrealzy
+#### Twitter: https://twitter.com/tonyrealzy
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
