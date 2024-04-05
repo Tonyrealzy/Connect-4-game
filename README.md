@@ -1,6 +1,8 @@
 # Getting Started with Create React App
 
-### You can access the deployed version of this project at: https://connect-4-game-for-browser.netlify.app
+### You can access the deployed version of this project using any of the following URLs: 
+#### https://connect-4-game-for-browser.netlify.app
+#### connect-4-game-for-desktop.surge.sh
 
 #### Author: Umehobi Arinze
 #### GitHub: https://github.com/tonyrealzy
