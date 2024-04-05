@@ -1,17 +1,32 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import GameCircle from './GameCircle';
 import '../App.css';
 import TopBox from './TopBox';
 import FooterBox from './FooterBox';
-import ToGetWinner from './ToGetWinner';
-import { GAME_DRAW, GAME_IDLE, GAME_INPLAY, GAME_WON, NO_OF_CIRCLES, NO_PLAYER, PLAYER1, PLAYER2 } from '../GameStateConst';
+import ToGetWinner, { isDraw } from './ToGetWinner';
+import { GAME_DRAW, GAME_INPLAY, GAME_WON, NO_OF_CIRCLES, NO_PLAYER, PLAYER1, PLAYER2 } from '../GameStateConst';
+import suggestComputerMove from '../SuggestMove';
 
 const GameBoard = () => {
-    // Here, you have to use React hooks...
+    // Here, I used React hooks...
     const [gameBoardInit, setGameBoardItems] = useState(Array(16).fill(NO_PLAYER));
     const [currentPlayer, setCurrentPlayer] = useState(PLAYER1);
     const [gameState, setGameState] = useState(GAME_INPLAY);
     const [winner, setWinner] = useState(NO_PLAYER);
+
+    useEffect(() => {
+        initTheGame();
+    }, [])
+
+    const initTheGame = () => {
+        setGameBoardItems(Array(16).fill(NO_PLAYER));
+        setGameState(GAME_INPLAY);
+        setCurrentPlayer(PLAYER1);
+    }
+
+    const suggestMove = () => {
+        circleClicked(suggestComputerMove(gameBoardInit));
+    }
 
     const initialisedBoard = () => {
         const circles = [];
@@ -28,12 +43,16 @@ const GameBoard = () => {
         if (gameState !== GAME_INPLAY) {
             return;
         }
-        // a recommended way to update your state in React, instead of updating a re-initialised version of it...
         if (ToGetWinner(gameBoardInit, id, currentPlayer)) {
             setGameState(GAME_WON);
             setWinner(currentPlayer);
         }
-
+        if (isDraw(gameBoardInit, id, currentPlayer)) {
+            setGameState(GAME_DRAW);
+            setWinner(NO_PLAYER);
+        }
+        
+        // a recommended way I used to update your state in React, instead of updating a re-initialised version of it...
         setGameBoardItems(prev => {
             return prev.map((circle, pos) => {
                 if (pos === id) {
@@ -56,7 +75,7 @@ const GameBoard = () => {
         <div className='gameBoard'>
             {initialisedBoard()}
         </div>
-        <FooterBox/>
+        <FooterBox onClickNewGame={initTheGame} onClickSuggest={suggestMove} gameState={gameState} />
     </div>
   )
 }

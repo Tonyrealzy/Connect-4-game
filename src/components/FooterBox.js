@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
+import { GAME_INPLAY } from '../GameStateConst';
 
-const FooterBox = () => {
+const FooterBox = ({onClickNewGame, onClickSuggest, gameState}) => {
   return (
     <div className='footBox'>
-        <section id="newGame">
-        <h3 id="texT">{'NEW GAME'}</h3>
-        </section>
+      {
+        gameState !== GAME_INPLAY ? <button class="newGame" onClick={onClickNewGame}>{'NEW GAME'}</button> : <button class="newGame" onClick={onClickSuggest}>SUGGEST</button>
+      }
     </div>
   )
 }

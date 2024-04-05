@@ -4,7 +4,7 @@ import GameBoard from './components/GameBoard';
 function App() {
   return (
     <div className="App">
-      <h1><span className='green'>CON</span>Ne<span className='green'>CT-4</span></h1>
+      <h1 className='heading'><span className='green'>CON</span>Ne<span className='green'>CT-4</span></h1>
       <GameBoard></GameBoard>
     </div>
   );

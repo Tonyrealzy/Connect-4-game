@@ -1,13 +1,22 @@
 import React from 'react';
-import { GAME_WON, GAME_INPLAY } from '../GameStateConst';
+import { GAME_WON, GAME_INPLAY, GAME_DRAW } from '../GameStateConst';
+import "../App.css";
 
 const TopBox = ({currentPlayer, winner, gameState}) => {
     const renderHeading = () => {
         switch (gameState) {
             case GAME_INPLAY:
-                return <div>PLAYER {currentPlayer} TURN</div>
+                return <div>
+                    <p class="lineHeight">PLAYER {currentPlayer} TURN</p>
+                </div>
             case GAME_WON:
-                return <div>PLAYER {winner} WINS!</div>
+                return <div>
+                    <p class="lineHeight">PLAYER {winner} WON!</p>
+                </div>
+            case GAME_DRAW:
+                return <div>
+                    <p class="lineHeight">DRAW!</p>
+                </div>
             default: return
         }
     }

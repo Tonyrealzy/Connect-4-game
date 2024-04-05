@@ -28,4 +28,12 @@ const ToGetWinner = (gameBoardInit, currentMove, currentPlayer) => {
     return false;
 }
 
+export const isDraw = (gameBoardInit, currentMove, currentPlayer) => {
+    let board = [...gameBoardInit];
+    board[currentMove] = currentPlayer;
+
+    let count = board.reduce((prev, pres) => prev + (pres === 0), 0);
+    return count === 0;
+}
+
 export default ToGetWinner
