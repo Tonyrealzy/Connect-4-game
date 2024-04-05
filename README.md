@@ -2,7 +2,7 @@
 
 ### You can access the deployed version of this project using any of the following URLs: 
 #### https://connect-4-game-for-browser.netlify.app
-#### connect-4-game-for-desktop.surge.sh
+#### https://connect-4-game-for-desktop.surge.sh/
 
 #### Author: Umehobi Arinze
 #### GitHub: https://github.com/tonyrealzy
