@@ -5,7 +5,7 @@ const FooterBox = ({onClickNewGame, onClickSuggest, gameState}) => {
   return (
     <div className='footBox'>
       {
-        gameState !== GAME_INPLAY ? <button class="newGame" onClick={onClickNewGame}>{'NEW GAME'}</button> : <button class="newGame" onClick={onClickSuggest}>SUGGEST</button>
+        gameState !== GAME_INPLAY ? <button class="newGame" onClick={onClickNewGame}>{'NEW GAME'}</button> : <button className="newGame" onClick={onClickSuggest}>SUGGEST</button>
       }
     </div>
   )

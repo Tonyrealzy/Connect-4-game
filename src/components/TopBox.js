@@ -7,15 +7,15 @@ const TopBox = ({currentPlayer, winner, gameState}) => {
         switch (gameState) {
             case GAME_INPLAY:
                 return <div>
-                    <p class="lineHeight">PLAYER {currentPlayer} TURN</p>
+                    <p className="lineHeight">PLAYER {currentPlayer} TURN</p>
                 </div>
             case GAME_WON:
                 return <div>
-                    <p class="lineHeight">PLAYER {winner} WON!</p>
+                    <p className="lineHeight">PLAYER {winner} WON!</p>
                 </div>
             case GAME_DRAW:
                 return <div>
-                    <p class="lineHeight">DRAW!</p>
+                    <p className="lineHeight">DRAW!</p>
                 </div>
             default: return
         }
